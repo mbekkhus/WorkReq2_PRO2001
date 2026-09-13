@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { usePreferenceState } from './hooks/usePreferences'
 
 export default function App() {
@@ -12,16 +12,6 @@ export default function App() {
             <h1>Vibe Studio</h1>
             <p>A small space that shifts with you.</p>
           </div>
-
-          <nav aria-label="Main navigation">
-            <NavLink to="/settings">
-              Customize
-            </NavLink>
-
-            <NavLink to="/preview">
-              Preview
-            </NavLink>
-          </nav>
         </div>
       </header>
 

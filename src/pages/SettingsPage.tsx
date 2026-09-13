@@ -1,4 +1,5 @@
 import { usePreferences } from '../hooks/usePreferences'
+import { NavLink } from 'react-router-dom'
 
 export default function SettingsPage() {
   const {
@@ -106,15 +107,25 @@ export default function SettingsPage() {
         </div>
       </fieldset>
 
-      <p
-  className="selection-summary"
-  aria-live="polite"
->
-  <span>Selected</span>
-  <strong>{preferences.color}</strong>
-  <span aria-hidden="true">·</span>
-  <strong>{preferences.mode}</strong>
-</p>
+      <div className="settings-footer">
+  <p
+    className="selection-summary"
+    aria-live="polite"
+  >
+    <span>Selected</span>
+    <strong>{preferences.color}</strong>
+    <span aria-hidden="true">·</span>
+    <strong>{preferences.mode}</strong>
+  </p>
+
+  <NavLink
+    className="page-link"
+    to="/preview"
+  >
+    View preview
+    <span aria-hidden="true">→</span>
+  </NavLink>
+</div>
     </section>
   )
 }

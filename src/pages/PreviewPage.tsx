@@ -1,7 +1,5 @@
-import {
-  usePreferences,
-  type Mode
-} from '../hooks/usePreferences'
+import { usePreferences, type Mode } from '../hooks/usePreferences'
+import { NavLink } from 'react-router-dom'
 
 const modeContent: Record<
   Mode,
@@ -34,6 +32,13 @@ export default function PreviewPage() {
 
   return (
     <section className="preview-page">
+      <NavLink
+  className="back-link"
+  to="/settings"
+>
+  <span aria-hidden="true">←</span>
+  Edit choices
+</NavLink>
       <header className="preview-heading">
         <h2>Here’s your space</h2>
         <p>
