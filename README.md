@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# Vibe Studio - Work Requirement 2 - PRO2001 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vibe Studio is a small multi-page React application. 
 
-Currently, two official plugins are available:
+The application allows users to choose a color and mode on the Customize page. The selected preferences are then used to change the content and visual appearance of the Preview page. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The original theme and mood concept is presented as Color and Mode in the interface. 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Three color options: Offset, Signal and Static 
+- Three mode options: Quiet, Bright and Focus 
+- A preview that changes based on the selected preferences 
+- Shared state across multiple routes 
+- Responsive layout for desktop and mobile 
+- Accessible buttons with visible selected and focus state 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Built with 
+
+- React
+- TypeScript 
+- Vite 
+- React Router 
+- CSS 
+
+
+## How to run 
+
+install dependencies: 
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start the development server: 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Open the local URL shown in the terminal. 
+
+
+## Shared State 
+
+The preferences are stored together in a structured state object containing `color` and `mode`. 
+
+The state is created in `App.tsx` and passed to the child routes through React Router´s `Outlet` context. This allows the selected preferences to remain available when the user moves between the Customize and Preview pages. 
+
+
+## Custom Hooks
+
+The application uses two related custom hooks in `usePreferences.ts`. 
+
+`usePreferenceState` creates and updates the preference state. It provides the current preferences together with the `setColor` and `setMode` functions. 
+
+`usePreferences` uses `useOutletContext` to give the route components access to the shared preference state without passing props through each component. 
+
+
+## Quality Checks 
+
+Run ESLint: 
+
+```bash
+npm run lint
+```
+
+Create a production build: 
+
+```bash
+npm run build
 ```
