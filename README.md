@@ -28,6 +28,18 @@ The original theme and mood concept is presented as Color and Mode in the interf
 
 ## How to run 
 
+Clone the repository:
+
+```bash
+git clone https://github.com/mbekkhus/WorkReq2_PRO2001.git
+```
+
+Navigate to the project folder: 
+
+```bash
+cd WorkReq2_PRO2001 
+```
+
 install dependencies: 
 
 ```bash
