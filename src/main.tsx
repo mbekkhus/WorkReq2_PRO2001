@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
-  createBrowserRouter,
+  createHashRouter,
   Navigate,
   RouterProvider
 } from 'react-router-dom'
@@ -10,7 +10,7 @@ import App from './App'
 import SettingsPage from './pages/SettingsPage'
 import PreviewPage from './pages/PreviewPage'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <App />,
