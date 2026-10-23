@@ -6,6 +6,8 @@ The application allows users to choose a color and mode on the Customize page. T
 
 The original theme and mood concept is presented as Color and Mode in the interface. 
 
+**Live demo:** https://mbekkhus.github.io/WorkReq2_PRO2001/
+
 
 ## Features 
 
